@@ -36,6 +36,12 @@ class OffensesController < ApplicationController
     end
   end
 
+  def destroy
+    @offense = Offense.find(params[:id])
+    @offense.destroy
+    redirect_to offenses_path
+  end
+  
   private
     def offense_params
       params.require(:offense).permit(:crime, :description, :picture)
