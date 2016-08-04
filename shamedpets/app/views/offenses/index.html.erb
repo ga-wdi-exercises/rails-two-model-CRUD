@@ -4,13 +4,13 @@
 <table>
   <tr>
     <th>Crime</th>
-    <th>Picture</th>
+    <th>Description</th>
   </tr>
 
   <% @offenses.each do |offense| %>
     <tr>
       <td><%= offense.crime %></td>
-      <td><%= offense.picture %></td>
+      <td><%= offense.description %></td>
       <td><%= link_to 'Show', offense_path(offense) %></td>
       <td><%= link_to 'Edit', edit_offense_path(offense) %></td>
     </tr>

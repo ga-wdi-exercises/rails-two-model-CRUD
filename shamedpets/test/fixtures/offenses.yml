@@ -2,8 +2,10 @@
 
 one:
   crime: MyString
-  description: MyText
+  description: MyString
+  picture: MyString
 
 two:
   crime: MyString
-  description: MyText
+  description: MyString
+  picture: MyString

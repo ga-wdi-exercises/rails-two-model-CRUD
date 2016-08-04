@@ -38,6 +38,6 @@ class OffensesController < ApplicationController
 
   private
     def offense_params
-      params.require(:offense).permit(:crime, :picture)
+      params.require(:offense).permit(:crime, :description, :picture)
     end
   end
