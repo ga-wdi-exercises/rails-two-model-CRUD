@@ -5,12 +5,14 @@
   <tr>
     <th>Crime</th>
     <th>Description</th>
+    <th>Picture</th>
   </tr>
 
   <% @offenses.each do |offense| %>
     <tr>
       <td><%= offense.crime %></td>
       <td><%= offense.description %></td>
+      <td><img src= "<%= offense.picture %>"</img></td>
       <td><%= link_to 'Show', offense_path(offense) %></td>
       <td><%= link_to 'Edit', edit_offense_path(offense) %></td>
       <td><%= link_to 'Destroy', offense_path(offense),

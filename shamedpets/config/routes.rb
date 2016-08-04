@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :offenses
-  
+  resources :offenses do
+    resources :dogs
+  end
+
   root 'welcome#index'
 end
