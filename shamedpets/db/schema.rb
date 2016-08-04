@@ -32,14 +32,5 @@ ActiveRecord::Schema.define(version: 20160804170647) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "pets", force: :cascade do |t|
-    t.string   "dog"
-    t.text     "dogpic"
-    t.string   "cat"
-    t.text     "catpic"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "dogs", "offenses"
 end
