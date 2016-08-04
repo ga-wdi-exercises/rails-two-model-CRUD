@@ -12,7 +12,7 @@
     <tr>
       <td><%= offense.crime %></td>
       <td><%= offense.description %></td>
-      <td><img src= "<%= offense.picture %>"</img></td>
+      <td><img src= "<%= offense.picture %>" width="250px"></img></td>
       <td><%= link_to 'Show', offense_path(offense) %></td>
       <td><%= link_to 'Edit', edit_offense_path(offense) %></td>
       <td><%= link_to 'Destroy', offense_path(offense),
