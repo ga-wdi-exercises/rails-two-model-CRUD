@@ -1,0 +1,18 @@
+<h1>Listing offenses</h1>
+<%= link_to 'New offense', new_offense_path %>
+
+<table>
+  <tr>
+    <th>Crime</th>
+    <th>Picture</th>
+  </tr>
+
+  <% @offenses.each do |offense| %>
+    <tr>
+      <td><%= offense.crime %></td>
+      <td><%= offense.picture %></td>
+      <td><%= link_to 'Show', offense_path(offense) %></td>
+      <td><%= link_to 'Edit', edit_offense_path(offense) %></td>
+    </tr>
+  <% end %>
+</table>
