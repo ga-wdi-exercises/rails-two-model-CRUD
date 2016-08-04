@@ -1,0 +1,15 @@
+<p>
+  <strong>Owner:</strong>
+  <%= dog.owner %>
+</p>
+
+<p>
+  <strong>Shamed:</strong>
+  <img src= "<%= dog.dogpic %>" width="200px"></img>
+</p>
+
+<p>
+  <%= link_to 'Remove Shame', [dog.offense, dog],
+                method: :delete,
+                data: { confirm: 'Are you sure you want to release the shame?' } %>
+</p>
