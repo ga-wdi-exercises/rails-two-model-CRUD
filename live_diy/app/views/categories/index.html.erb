@@ -1,0 +1,13 @@
+<% flash.each do |type, message| %>
+  <p><% type %><%= message %></p>
+<% end %>
+
+<br>
+<br>
+
+<p class='add'><%= link_to "(+) Add Category", new_category_path(@category) %></p>
+
+<% @categories.each do |category| %>
+  <ul class='category'><li><%= image_tag category.image_url %></li>
+  <li><%= link_to category.name, category_path(category) %>  <%= link_to "  (Edit)", edit_category_path(category) %></li></ul>
+<% end %>
