@@ -1,0 +1,27 @@
+<%= form_for [@book,@recipe] do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :ingredients %><br>
+    <%= f.text_field :ingredients %>
+  </p>
+
+  <p>
+    <%= f.label :steps %><br>
+    <%= f.text_field :steps %>
+  </p>
+
+  <p>
+    <%= f.label :img_url %><br>
+    <%= f.text_field :img_url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

@@ -1,0 +1,9 @@
+<h3> <%= @book.name %></h3>
+<p><%= link_to "Edit Cookbook", edit_book_path(@book)%></p>
+<p><%= link_to "Delete Cookbook", book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }%></p>
+<p><%= link_to "Create a New Recipe", new_book_recipe_path(@book)%></p>
+
+<% @book.recipes.each do |recipe| %>
+	<p><img src="<%= recipe.img_url %>" alt="" /></p>
+  <h3> <%=link_to recipe.title,book_recipe_path(@book.id,recipe.id) %></h3>
+<% end%>
