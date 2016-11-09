@@ -1,0 +1,7 @@
+<p><%= link_to "New Cookbook", new_book_path %></p>
+
+<% @books.each do |book| %>
+<img src="<%= book.img_url %>" alt="" />
+<h3> <%=link_to book.name,book_path(book) %></h3>
+<p><%= book.bookType %></p>
+<% end%>

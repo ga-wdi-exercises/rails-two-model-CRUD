@@ -1,36 +1,25 @@
-## Week 6 Homework
+# README
 
-In preparation for building an app from scratch in Rails, this week's only HW will be to build a CRUD app from the ground up. For this homework, you will build an app of your choosing.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-If you don't have any ideas for projects, use the list of sample projects below.
+Things you may want to cover:
 
-If you have multiple ideas for project week, this may be a good opportunity to try one out. We would suggest not doing the same project over for project week, so you don't burn out.  
+* Ruby version
 
-### Requirements (MVP)
+* System dependencies
 
-- Due Friday at 9:00AM
-- Must have 2 models
-- Must have 1 association between models
-- Have complete RESTful routes for at least 1 model
-- Include Error Handling & Validations for all models
+* Configuration
 
-#### Bonuses (Silver)
-  - More than 3 models
-  - Model with many-to-many relationship
+* Database creation
 
-#### Ultra Bonuses (Gold, Platinum)
-  - User authentication
-  - Use websockets
+* Database initialization
 
-### Suggestions for Apps
+* How to run the test suite
 
-  - Cookbook
-    - Models: Recipe & Ingredient
-  - Messaging platform
-    - Models: Message & User
-  - Event Scheduler
-    - Models: Location & Event, Event & User
-  - Song Playlist app
-    - Models: Song & Playlist
-  - Dating Site for Pokemon
-    - Models: Pokemon & Date
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+# cookbook
