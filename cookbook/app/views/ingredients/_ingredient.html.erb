@@ -1,0 +1,11 @@
+
+
+<p>
+  <%= ingredient.body %>
+</p>
+
+<p>
+  <%= link_to 'Delete', [ingredient.recipe, ingredient],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

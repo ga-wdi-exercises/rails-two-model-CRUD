@@ -1,4 +1,4 @@
-<h1>Listing Recipes</h1>
+<h1>Recipes:</h1>
 
 
   <% @recipes.each do |recipe| %>
@@ -7,10 +7,10 @@
       <h3><%=  link_to recipe.title, recipe_path(recipe) %></h3>
       <td><%= recipe.text %></td>
       </br>
-    
+
   <% end %>
 
 
 </br>
 </br>
-<%= link_to 'New recipe', new_recipe_path %>
+<h3><%= link_to 'New recipe', new_recipe_path %></h3>
