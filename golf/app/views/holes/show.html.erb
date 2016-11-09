@@ -1,0 +1,7 @@
+<h2><%= @hole.hole_num %> <%= link_to("(Edit)", edit_hole_path(@hole)) if @current_user %></h2>
+<h3>For: <%= link_to @hole.course.name, @hole.course %></h3>
+
+<img class="hole_img" src="<%= @hole.img_url %>" alt="">
+<li>Hole: <%= @hole.hole_num%></li>
+<li>Par: <%= @hole.par%></li>
+<li>Yardage: <%= @hole.yardage%></li>

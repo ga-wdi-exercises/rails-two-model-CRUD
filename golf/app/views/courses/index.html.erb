@@ -1,0 +1,13 @@
+<h1>Courses <%= link_to("(+)", new_course_path) if @current_user %> </h1>
+
+<ul>
+<% @courses.each do |course| %>
+  <h2><%= link_to course.name, course %></h2>
+  <li><%= course.location %></li>
+  <li><img class= "course_img" src="<%= course.img_url %>" alt=""></li>
+  <li>Number of Holes: <%= course.num_holes %></li>
+  <li>Par: <%= course.par %></li>
+  <li>Yardage: <%= course.yardage %></li>
+  <li>Rating: <%= course.rating %></li>
+<% end %>
+</ul>

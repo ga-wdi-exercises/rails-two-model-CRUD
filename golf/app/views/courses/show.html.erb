@@ -1,0 +1,14 @@
+<h2><%= @course.name %> <%= link_to("(Edit)", edit_course_path(@course)) if @current_user %> </h2>
+<h3><%= @course.location %></h3>
+<%= image_tag @course.img_url, class: "course_img" %>
+
+<h3>Holes <%= link_to("(+)", new_course_hole_path(@course)) if @current_user %></h3>
+
+<ul>
+  <% @course.holes.each do |hole| %>
+    <h2><li>Hole: <%= link_to hole.hole_num, hole %></li></h2>
+    <li>Par: <%=hole.par%></li>
+    <li>Yardage: <%=hole.yardage%></li>
+    <img class="hole_img" src="<%= hole.img_url %>" alt="">
+  <% end %>
+</ul>
