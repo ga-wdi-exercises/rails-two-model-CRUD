@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <nav>
+      <h1><%= link_to "View All Brands", car_models_path %> | <%= link_to "Create a Brand", new_car_model_path %></h1>
+    </nav>
     <%= yield %>
   </body>
 </html>

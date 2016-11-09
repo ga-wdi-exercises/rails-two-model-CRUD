@@ -1,0 +1,6 @@
+<h2><%= @car_model.name %> Cars:</h2>
+
+<% @car_model.type_of_cars.each do |car| %>
+  <h3><%= car.name %> / Year: <%= car.year %> / Model: <%= car.model %></h3>
+  <p><img src="<%= car.photo %>"></p>
+<% end %>

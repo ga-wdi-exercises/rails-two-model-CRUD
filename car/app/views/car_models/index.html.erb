@@ -1,0 +1,7 @@
+<h2>CAR BRANDS</h2>
+
+<% @car_models.each do |model| %>
+  <h3><%= model.name %> / <%= model.country %></h3>
+  <p><img src="<%= model.logo %>"></p>
+  <p><%= link_to "View Details", model%> | <%= link_to "Edit Details", edit_car_model_path(model) %> | <%= link_to "Delete Brand", model, method: :delete, data: {confirm: "Delete this Brand?"} %></p>
+<% end %>
