@@ -2,8 +2,6 @@
 <p><%= image_tag(@author.photo_url) %></p>
 <p><%= @author.biography %></p>
 
-<hr></hr>
-
 <% @author.books.each do |book| %>
 <p><%= book.title %>
 <%= link_to "[View]", author_book_path(@author, book) %>

@@ -1,3 +1,7 @@
+<% @author.errors.full_messages.each do |message| %>
+<p><%= message %></p>
+<% end %>
+
 <%= form_for @author do |f| %>
 
 <p><%= f.label "Authors Name:" %>

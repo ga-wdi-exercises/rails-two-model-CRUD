@@ -13,14 +13,18 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.create!(author_params)
-    redirect_to @author
+    @author = Author.new(author_params)
+    if @author.save
+      redirect_to @author, notice: "Author was created."
+    else
+      render :new
+    end
   end
 
   def destroy
     @author = Author.find(params[:id])
     @author.destroy
-    redirect_to authors_path
+    redirect_to authors_path, notice: "Author was deleted."
   end
 
   def edit
@@ -30,7 +34,7 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find(params[:id])
     @author.update(author_params)
-    redirect_to author_path(@author)
+    redirect_to author_path(@author), notice: "Author was updated."
   end
 
   private

@@ -17,13 +17,13 @@ class BooksController < ApplicationController
   def create
     @author = Author.find(params[:author_id])
     @book = @author.books.create!(book_params)
-    redirect_to @author
+    redirect_to @author, notice: "Book was created."
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to @book.author
+    redirect_to @book.author, notice: "Book was deleted."
   end
 
   def edit
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to @book.author
+    redirect_to @book.author, notice: "Book was updated."
   end
 
   private
