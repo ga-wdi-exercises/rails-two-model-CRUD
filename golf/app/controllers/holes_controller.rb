@@ -29,7 +29,7 @@ class HolesController < ApplicationController
   def update
     redirect_to root_path unless @current_user
     @hole = Hole.find(params[:id])
-    @hole.update(holes_params)
+    @hole.update(hole_params)
     redirect_to @hole
   end
 

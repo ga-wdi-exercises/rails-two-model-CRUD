@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
   end
 
   def new
-    redirect_to root_path unless @current_user
+    redirect_to courses_path unless @current_user
     @course = Course.new
   end
 

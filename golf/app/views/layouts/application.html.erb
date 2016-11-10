@@ -1,31 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Golf</title>
+    <title>Golf Masters</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Martel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    </head>
   <body>
-    <img class= "header" src="http://www.freewebheaders.com/wordpress/wp-content/gallery/golf/large-open-air-course-with-golf-stick-and-ball-web-header.jpg" alt="">
-    <h1><%= link_to "Courses", courses_path %></h1>
-  <nav>
+    <nav class="login_2">
+      <% if @current_user %>
+        <%= link_to "WELCOME, #{@current_user.username}!", user_path(@current_user) %>
+        <%= link_to "USERS", users_path %>
+        <%= link_to "SIGN OUT", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "LOGIN", new_session_path %>
+        <%= link_to "SIGN UP", new_user_path %>
+        <%= link_to "USERS", users_path %>
+      <% end %>
+    </nav>
+    <div class="header_pic">
+      <div class= "header_title">
+        <%= image_tag("flag.png", :alt => "flag") %>
+        <h2>Golf Master</h2>
+        <h3>Look up Courses</h3>
+        <h3>Enter your own Course</h3>
+        <h3>Update Courses</h3>
+        <h3>Bet with friends on holes</h3>
+        <h3>Track your winnings</h3>
+      </div>
+    </div>
+
+  <nav class="login_1">
+    <%= link_to "HOME", new_course_path %>
+    <%= link_to "COURSES", courses_path %>
     <% if @current_user %>
-      <%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %>
-      <%= link_to "Sign Out", session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_path %>
-      <%= link_to "Sign In", new_session_path %>
+    <%= link_to "ADD A COURSE", new_course_path %>
+    <div class="dropdown">
+      <%= link_to "EDIT A COURSE", new_course_path %>
+        <div class="dropdown-content">
+          <% @courses.each do |course| %>
+            <p><%= link_to course.name, edit_course_path(course) %></p>
+          <% end %>
+        </div>
+    </div>
+    <%= link_to "BET GOLF", new_course_path %>
+    <%= link_to "WINNINGS", new_course_path %>
     <% end %>
-    <%= link_to "Courses", courses_path %>
-    <%= link_to "Users", users_path %>
   </nav>
 
   <% flash.each do |type, message| %>
   <p class="<%= type %>"><%= message %></p>
   <% end %>
 
+  <div class="content">
     <%= yield %>
+  </div>
+
+  <footer>
+    <div class= "links">
+      <img src="https://github.com/bcravens/portfolio/blob/master/images/twitter.png?raw=true"/>
+      <img src="https://github.com/bcravens/portfolio/blob/master/images/fb.png?raw=true"/>
+      <img src="https://github.com/bcravens/portfolio/blob/master/images/git.png?raw=true"/>
+      <img src="https://github.com/bcravens/portfolio/blob/master/images/google.png?raw=true"/>
+      <img src="https://github.com/bcravens/portfolio/blob/master/images/insta.png?raw=true"/>
+    </div>
+  </footer>
 
   </body>
 </html>
