@@ -1,12 +1,12 @@
-<p><%= @book.title %></p>
-<p><%= @book.category %></p>
-<p><%= @book.book_type %></p>
-<p><%= @book.page_number %></p>
+<p>Title: <%= @book.title %></p>
+<p>Catgory: <%= @book.category %></p>
+<p>Book Type: <%= @book.book_type %></p>
+<p>Number of Pages: <%= @book.page_number %></p>
 
-<p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+<p><%= link_to "Edit Book", edit_author_book_path(@book) %></p>
 
-<p><%= link_to "Delete Book", book_path(@book),
+<p><%= link_to "Delete Book", author_book_path(@book),
         method: :delete,
         data: { confirm: 'Delete Book?' } %></p>
 
-<p><%= link_to "Return to Book List", books_path %></p>
+<p><%= link_to "Return to Author List", authors_path %></p>

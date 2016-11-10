@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :authors, :books
+  root "authors#index"
 
-root "authors#index"
-
+  resources :authors do
+    resources :books
+  end
 end

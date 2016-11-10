@@ -6,31 +6,35 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @author = @book.author
   end
 
   def new
     @book = Book.new
+    @author = Author.find(params[:author_id])
   end
 
   def create
-    @book = Book.create!(book_params)
-    redirect_to @book
+    @author = Author.find(params[:author_id])
+    @book = @author.books.create!(book_params)
+    redirect_to @author
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path
+    redirect_to @book.author
   end
 
   def edit
     @book = Book.find(params[:id])
+    @author = @book.author
   end
 
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to book_path(@book)
+    redirect_to @book.author
   end
 
   private
