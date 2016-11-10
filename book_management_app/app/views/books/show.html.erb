@@ -1,0 +1,12 @@
+<p><%= @book.title %></p>
+<p><%= @book.category %></p>
+<p><%= @book.book_type %></p>
+<p><%= @book.page_number %></p>
+
+<p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+
+<p><%= link_to "Delete Book", book_path(@book),
+        method: :delete,
+        data: { confirm: 'Delete Book?' } %></p>
+
+<p><%= link_to "Return to Book List", books_path %></p>

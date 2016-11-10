@@ -1,0 +1,11 @@
+<p><%= @author.name %></p>
+<p><%= image_tag(@author.photo_url) %></p>
+<p><%= @author.biography %></p>
+
+<p><%= link_to "Edit Author", edit_author_path(@author) %></p>
+
+<p><%= link_to "Delete Author", author_path(@author),
+        method: :delete,
+        data: { confirm: 'Delete Author?' } %></p>
+
+<p><%= link_to "Return to Author List", authors_path %></p>

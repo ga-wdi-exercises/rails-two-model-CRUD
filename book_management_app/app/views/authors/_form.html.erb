@@ -1,0 +1,14 @@
+<%= form_for @author do |f| %>
+
+<p><%= f.label "Authors Name:" %>
+<%= f.text_field :name %></p>
+
+<p><%= f.label "Photo Link:" %>
+<%= f.text_field :photo_url %></p>
+
+<p><%= f.label "Author Biography" %>
+<%= f.text_field :biography %></p>
+
+<p><%= f.submit %></p>
+
+<% end %>
