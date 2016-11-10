@@ -1,0 +1,4 @@
+<h2><%= link_to "Playlists", playlists_path %></h2>
+<h3>Playlist <%= @playlist.name %></h3>
+<p><%= link_to "Edit", edit_playlist_path(@playlist %></p>
+<p><%= link_to "Delete", playlist_path(@playlist), method: :delete %></p>

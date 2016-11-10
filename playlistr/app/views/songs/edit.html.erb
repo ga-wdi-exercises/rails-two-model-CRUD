@@ -1,0 +1,5 @@
+<h2>Edit Song</h2>
+
+  <%= render 'form' %>
+
+  <%= link_to "Delete", playlist_song_path(@playlist, @song), method: :delete, class: 'delete' %>
