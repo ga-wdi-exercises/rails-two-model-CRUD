@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <h1><%= link_to "View All Brands", car_models_path %> | <%= link_to "Create a Brand", new_car_model_path %></h1>
+      <p>
+      <% if @current_user %>
+        <%= link_to "Welcome, #{@current_user.username}", user_path(@current_user) %>
+        <%= link_to "Sign Out", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_path %>
+        <%= link_to "Sign In", new_session_path %>
+      <% end %>
+      </p>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

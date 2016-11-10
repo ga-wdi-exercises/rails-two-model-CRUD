@@ -1,0 +1,5 @@
+<% flash.each do |type, message| %>
+  <p><%= type %>: <%= message %></p>
+<% end %>
+
+<h2><%= @user.username %> <%= link_to "(edit)", edit_user_path(@user) if @current_user == @user %></h2>
