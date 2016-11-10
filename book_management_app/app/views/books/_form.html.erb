@@ -1,0 +1,21 @@
+<% @book.errors.full_messages.each do |message| %>
+<p><%= message %></p>
+<% end %>
+
+<%= form_for ([@author, @book]) do |f| %>
+
+<p><%= f.label "Title:" %>
+<%= f.text_field :title %></p>
+
+<p><%= f.label "Category:" %>
+<%= f.text_field :category %></p>
+
+<p><%= f.label "Book Type:" %>
+<%= f.text_field :book_type %></p>
+
+<p><%= f.label "Number of Pages:" %>
+<%= f.text_field :page_number %></p>
+
+<p><%= f.submit %></p>
+
+<% end %>

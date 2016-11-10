@@ -1,0 +1,24 @@
+<p><%= @author.name %></p>
+<p><%= image_tag(@author.photo_url) %></p>
+<p><%= @author.biography %></p>
+
+<% @author.books.each do |book| %>
+<p><%= book.title %>
+<%= link_to "[View]", author_book_path(@author, book) %>
+<%= link_to "[Edit]", edit_author_book_path(@author, book) %>
+<%= link_to "[Delete]", author_book_path(@author, book),
+        method: :delete,
+        data: { confirm: 'Delete Book?' } %></p>
+<% end %>
+
+<hr></hr>
+
+<p><%= link_to "Add Book to Author", new_author_book_path(@author) %></p>
+
+<p><%= link_to "Edit Author", edit_author_path(@author) %></p>
+
+<p><%= link_to "Delete Author", author_path(@author),
+        method: :delete,
+        data: { confirm: 'Delete Author?' } %></p>
+
+<p><%= link_to "Return to Author List", authors_path %></p>
