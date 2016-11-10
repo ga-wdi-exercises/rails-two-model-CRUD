@@ -1,0 +1,19 @@
+<h2>Edit Hole</h2>
+
+<%= form_for @hole do |f| %>
+  <%= f.label :imgage %>
+  <%= f.text_field :img_url %>
+
+  <%= f.label :hole %>
+  <%= f.text_field :hole_num %>
+
+  <%= f.label :par %>
+  <%= f.text_field :par %>
+
+  <%= f.label :yardage %>
+  <%= f.text_field :yardage %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to("Delete", @hole, method: :delete, class: "delete") if @current_user %>

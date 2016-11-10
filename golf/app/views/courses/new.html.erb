@@ -1,0 +1,26 @@
+<h2>New Course</h2>
+
+<%= form_for @course do |f| %>
+  <%= f.label :image %>
+  <%= f.text_field :img_url %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :holes %>
+  <%= f.text_field :num_holes %>
+
+  <%= f.label :par %>
+  <%= f.text_field :par %>
+
+  <%= f.label :yardage %>
+  <%= f.text_field :yardage %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.submit %>
+<% end %>

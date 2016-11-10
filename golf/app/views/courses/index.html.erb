@@ -1,0 +1,16 @@
+<h1>All Courses</h1>
+
+<div class="courses">
+  <% @courses.each do |course| %>
+    <div class="course">
+      <h2><%= link_to course.name, course %></h2>
+        <img class= "course_img" src="<%= course.img_url %>" alt="">
+        <ul>
+          <li>Number of Holes: <%= course.num_holes %></li>
+          <li>Par: <%= course.par %></li>
+          <li>Yardage: <%= course.yardage %></li></li>
+          <li>Rating: <%= course.rating %></li>
+        </ul>
+    </div>
+  <% end %>
+</div>

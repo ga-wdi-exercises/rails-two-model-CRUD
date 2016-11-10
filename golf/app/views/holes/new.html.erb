@@ -1,0 +1,17 @@
+<h2>New Hole for <%= link_to @course.name, @course %></h2>
+
+<%= form_for [@course, @hole] do |f| %>
+  <%= f.label :image %>
+  <%= f.text_field :img_url %>
+
+  <%= f.label :hole %>
+  <%= f.text_field :hole_num %>
+
+  <%= f.label :par %>
+  <%= f.text_field :par %>
+
+  <%= f.label :yardage %>
+  <%= f.text_field :yardage %>
+
+  <%= f.submit %>
+<% end %>
