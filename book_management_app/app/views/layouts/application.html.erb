@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BookManagementApp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>BookManagementApp</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <% flash.each do |type, message| %>
-    <p class="flash"><%= message %></p>
-    <% end %>
-    <%= yield %>
-  </body>
+<body>
+  <h1>Book Management Application</h1>
+  <nav>
+    <h2><%= link_to "View Author Listing", authors_path %> | <%= link_to "View Book Listing", books_path %></h2>
+  </nav>
+  <hr></hr>
+  <% flash.each do |type, message| %>
+  <p class="flash"><%= message %></p>
+  <% end %>
+  <%= yield %>
+</body>
 </html>
