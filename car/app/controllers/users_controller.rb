@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  include ActiveModel::Validations
+  validates :username, presence: true
+  validates :password, presence: true
+
   def index
     @users = User.all
   end
@@ -8,8 +12,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to users_path(@user)
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "User was successfully created."
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def show
