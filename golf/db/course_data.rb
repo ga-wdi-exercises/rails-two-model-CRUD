@@ -17,6 +17,24 @@ def get_course_data
                   par: 72,
                   yardage: 6960,
                   rating: 75.5,
+                },
+    "links" => {
+                  img_url: "http://i.imgur.com/3KyPJSo.jpg",
+                  name: "The Links at Spanish Bay",
+                  location: "2700 17-Mile Drive, Pebble Beach, CA 93953",
+                  num_holes: 18,
+                  par: 72,
+                  yardage: 6821,
+                  rating: 74,
+                },
+    "delmonte" => {
+                  img_url: "http://i.imgur.com/Wm8Zsjb.jpg",
+                  name: "Del Monte",
+                  location: "1300 Sylvan Road, Monterey, CA 93940",
+                  num_holes: 18,
+                  par: 72,
+                  yardage: 6365,
+                  rating: 71,
                 }
     }
   return course_data
