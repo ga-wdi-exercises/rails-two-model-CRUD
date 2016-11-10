@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookbook</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <h1>Ba's Amazing Cookbook</h1>
+    <nav>
+      <h3><%= link_to "View Recipes", recipes_path %> | <%= link_to "View Ingredients", ingredients_path %> | <%= link_to "Add An Ingredient", new_ingredient_path %></h3>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

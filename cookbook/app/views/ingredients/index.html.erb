@@ -1,0 +1,6 @@
+<h1>The Most Magical Ingredients</h1>
+<% @ingredients.each do |ingredient| %>
+  <div>
+    <%= link_to ingredient.name, ingredient_path(ingredient) %> - In <%= link_to ingredient.recipe.name, recipe_path(@recipes) %> recipe
+  </div>
+<% end %>
