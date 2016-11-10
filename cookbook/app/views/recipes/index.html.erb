@@ -1,0 +1,8 @@
+<h1>The Greatest Recipes on Earth</h1>
+<% @recipes.each do |recipe| %>
+  <div>
+    <h2><a href="<%= recipe_path(recipe)%>"><%=recipe.name%></a></h2>
+    <img src="<%= recipe.img_url %>">
+    <p>Price: <%= recipe.price %></p>
+  </div>
+<% end %>

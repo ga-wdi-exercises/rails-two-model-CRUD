@@ -1,0 +1,20 @@
+<%= form_for @ingredient do |f| %>
+  <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :img_url %><br>
+      <%= f.text_area :img_url %>
+    </p>
+
+    <p>
+      <%= f.label :price %><br>
+      <%= f.text_area :price %>
+    </p>
+<p>Select a recipe <%= f.select :recipe_id, [['Birthday Cake', 1],['Pasta Dish', 2]] %></p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
