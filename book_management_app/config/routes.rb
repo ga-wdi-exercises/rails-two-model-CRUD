@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :books
   end
 
-resources :books, except: [:new, :create]  
+resources :books, except: [:new, :create]
 end
