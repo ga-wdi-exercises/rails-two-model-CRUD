@@ -1,0 +1,10 @@
+<h1>Welcome to Forumblog</h1>
+<%= link_to 'New Topic', new_topic_path %>
+
+<% @topics.each do |topic|  %>
+<div class="topic">
+  <h2><%= link_to topic.title, topic_path(topic) %></h2>
+  <p><%= topic.description %></p>
+  <p><%= link_to "Edit", edit_topic_path(topic) %> || <%= link_to "Delete", topic_path(topic), method: :delete %>
+</div>
+<% end %>
