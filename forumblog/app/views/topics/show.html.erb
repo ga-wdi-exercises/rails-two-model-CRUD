@@ -1,0 +1,35 @@
+<%= @topic.title %></br>
+<%= @topic.description %>
+
+<h2>Add a post:</h2>
+<%= form_for([@topic, @topic.posts.build]) do |f| %>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<% @topic.posts.each do |post| %>
+<div class="post">
+
+</div>
+  <p>
+    <h3>Author:</h3>
+    <%= post.author %>
+  </p>
+
+  <p>
+    <%= post.body %>
+  </p>
+</div>
+
+<% end %>
+
+<%= link_to "Back to Main", topics_path %>
