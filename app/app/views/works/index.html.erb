@@ -1,0 +1,7 @@
+<h2>Works of Art</h2>
+
+<ul>
+  <% @works.each do |work| %>
+    <li><%= link_to "#{work.title} - #{work.artist.name}", work %></li>
+  <% end %>
+</ul>

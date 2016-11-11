@@ -1,0 +1,9 @@
+<h2 class = "content">Artists <%= link_to("(+)", new_artist_path) if @current_user %></h2>
+
+<div class = "artist_list">
+
+  <%= @artists.each do |artist| %>
+      <%= link_to artist.name, artist %>
+  <% end %>
+
+</div>

@@ -1,0 +1,6 @@
+<h2><%= @work.title %> <%= link_to "(edit)", edit_work_path(@work) %></h2>
+<h3>By: <%= link_to @work.artist.name, @work.artist %></h3>
+
+Date: <%= @work.date %></br>
+
+<%= image_tag @work.photo_url %>

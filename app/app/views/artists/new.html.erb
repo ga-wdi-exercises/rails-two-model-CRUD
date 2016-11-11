@@ -1,0 +1,12 @@
+<% form_for @artist do |f| %>
+  Name: <%= f.label :name %>
+         <%= f.text_field :name %> <br />
+
+  Age: <%= f.label :age %>
+        <%= f.text_field :age %> <br/>
+
+Location: <%= f.label :location %>
+      <%= f.text_field :location %> <br/>
+
+        <%= f.submit %>
+<% end %>

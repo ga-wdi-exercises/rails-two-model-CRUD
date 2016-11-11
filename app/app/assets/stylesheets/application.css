@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  background-image: url("girl_glasses.jpeg");
+  background-size: cover;
+  margin: 0 30% 0 20%;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+h1{
+  font-family: 'Rock Salt', cursive;
+
+}
+h2, h3, .navlinks {
+  font-family: 'Poiret One', cursive;
+}
+.content{
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: auto;
+  padding-top: 30px;
+  color: white;
+}
+
+.artist_list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 300px;
+}

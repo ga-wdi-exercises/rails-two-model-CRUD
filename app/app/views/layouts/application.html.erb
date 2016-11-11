@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>le Art</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+</head>
+
+<div class = "content">
+<body>
+  <h1><%= link_to "Paint . Discover . Post here .", root_url %></h1>
+  <nav class = "navlinks">
+    <% if @current_user %>
+    <%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+    <%= link_to "Works", works_path %>
+    <%= link_to "Artists", artists_path %>
+
+    <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+    <% end %>
+
+    <% flash.each do |type, message| %>
+    <p class="<%= type %>"><%= message %></p>
+    <% end %>
+  </nav>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
