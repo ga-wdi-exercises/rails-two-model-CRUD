@@ -1,0 +1,12 @@
+<h2><%= @artist.name %> <%= link_to "(edit)", edit_artist_path(@artist) %></h2>
+
+<h4><%= @artist.location %></h4>
+
+
+<h3>Works <%= link_to "(+)", new_artist_work_path(@artist) %></h3>
+
+<ul>
+  <%= @artist.each do |work| %>
+    <li><%= link_to "#{work.title} (#{work.date})", work %></li>
+  <% end %>
+</ul>

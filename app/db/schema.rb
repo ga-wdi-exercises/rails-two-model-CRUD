@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20161110042755) do
     t.string   "name"
     t.string   "age"
     t.string   "location"
+    t.integer  "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artists_on_artist_id", using: :btree
   end
 
   create_table "works", force: :cascade do |t|
@@ -30,6 +32,9 @@ ActiveRecord::Schema.define(version: 20161110042755) do
     t.integer  "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_works_on_artist_id", using: :btree
   end
 
+  add_foreign_key "artists", "artists"
+  add_foreign_key "works", "artists"
 end

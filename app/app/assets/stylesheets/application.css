@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-image: url("girl_glasses.jpeg");
+  background-size: cover;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+.content{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.artist_list{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.8);
+}

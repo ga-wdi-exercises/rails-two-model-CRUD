@@ -5,29 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require_relative './work_data.rb'
-require_relative './artist_data.rb'
 
-Work.destroy_all
 Artist.destroy_all
+Work.destroy_all
 
-work_data = get_work_data()
-artist_data = get_artist_data()
+diana = Artist.create!(name: "Bob", age: 24, location: "dc")
+van_gogh = Artist.create!(name: "Van Gogh", age: 100, location: "france" )
+takashi = Artist.create!(name: "Takashi", age:55, location: "Japan")
 
-work_data.each_pair do |artist_name, works|
-  info = artist_data[artist_name]
-  current_artist = Artist.create!({
-    name:          info[:name],
-    age:           info[:age,
-    location:      info[:location]
-  })
-
-  works.each do |song|
-    Work.create!({
-      title:        song[:title],
-      date:        song[:date],
-      photo_url:  song[:photo_url],
-      artist:       current_artist
-    })
-  end
-end
+diana.works.create(title: "art1", date: "10/14/15", photo_url: "http://placehold.it/150x150" )
+van_gogh.works.create(title: "art2", date: "11/11/45", photo_url: "http://placehold.it/150x150")
+takashi.works.create(title: "art3", date: "02/11/14", photo_url: "http://placehold.it/150x150")
