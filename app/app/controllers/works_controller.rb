@@ -14,7 +14,7 @@ class WorksController < ApplicationController
       @artist = Artist.find(params[:artist_id])
       @work = @artist.works.create(work_params)
 
-      redirect_to @song
+      redirect_to @work
     end
 
     #show

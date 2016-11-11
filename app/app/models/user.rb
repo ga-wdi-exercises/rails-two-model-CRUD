@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_many :artists
-  has_many :songs
+  has_many :works
 end

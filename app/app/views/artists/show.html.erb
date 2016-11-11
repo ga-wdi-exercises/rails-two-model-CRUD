@@ -3,7 +3,7 @@
 <h4><%= @artist.location %></h4>
 
 
-<h3>Works <%= link_to "(+)", new_artist_work_path(@artist) %></h3>
+<h3 class = "content">Works <%= link_to "(+)", new_artist_work_path(@artist) %></h3>
 
 <ul>
   <%= @artist.each do |work| %>

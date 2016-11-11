@@ -3,31 +3,26 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
-  # new
   def new
     redirect_to root_path unless @current_user  # Don't even allow this page to load if a user isn't signed-in
     @artist = Artist.new
   end
 
-  # create
   def create
     @artist = Artist.create!(artist_params)
 
     redirect_to @artist
   end
 
-  #show
   def show
     @artist = Artist.find(params[:id])
   end
 
-  # edit
+
   def edit
     @artist = Artist.find(params[:id])
   end
 
-
-  # update
   def update
     @artist = Artist.find(params[:id])
     @artist.update(artist_params)
@@ -35,7 +30,6 @@ class ArtistsController < ApplicationController
     redirect_to @artist
   end
 
-  # destroy
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
